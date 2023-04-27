@@ -1,0 +1,255 @@
+@import "./breakpoints.scss";
+@import "./setup.scss";
+
+html {
+  background-color: var(--color-neutral-grey-1);
+  @include lg {
+    font-size: 50%;
+  }
+}
+
+main {
+  max-width: 110rem;
+  margin: 2rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0 6rem 0;
+
+  &__categories {
+    display: flex;
+    gap: 4rem;
+
+    div {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary-1);
+      }
+    }
+
+    @include lg {
+      gap: 2rem;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__open {
+    display: none;
+    cursor: pointer;
+
+    @include sm {
+      display: inline-block;
+    }
+  }
+
+  &__mobile {
+    background-color: rgba(0, 0, 0, 0.397);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      width: 66%;
+      height: 100%;
+      background-color: white;
+
+      img {
+        align-self: end;
+        width: 40px;
+        height: 40px;
+        margin: 4rem;
+        cursor: pointer;
+      }
+
+      &__categories {
+        font-size: var(--text-heading-size-3);
+        margin-top: 6rem;
+
+        div {
+          padding: 2rem 0 2rem 4rem;
+          cursor: pointer;
+
+          &:hover {
+            color: var(--color-primary-1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "banner banner new"
+    "title description new"
+    "item-1 item-2 item-3";
+  gap: 3rem;
+  line-height: 1.6;
+
+  @include md {
+    grid-template-areas:
+      "banner"
+      "title"
+      "description"
+      "new"
+      "item-1"
+      "item-2"
+      "item-3";
+  }
+
+  &__banner {
+    grid-area: banner;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__new {
+    grid-area: new;
+    padding: 3rem;
+    background-color: var(--color-neutral-grey-4);
+    color: var(--color-neutral-grey-1);
+
+    @include sm {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      color: var(--color-primary-1);
+      font-size: var(--text-heading-size-2);
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: var(--text-heading-size-3);
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary-1);
+      }
+    }
+
+    p {
+      color: var(--color-neutral-grey-2);
+    }
+
+    .line {
+      margin: 3rem 0;
+      border-top: 1px solid var(--color-neutral-grey-3);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: var(--text-heading-size-1);
+    font-weight: var(--text-weight-extrabold);
+    line-height: 1;
+  }
+
+  &__description {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      color: var(--color-neutral-grey-3);
+
+      margin-bottom: 2rem;
+    }
+
+    button {
+      display: inline-block;
+      width: 20rem;
+      border: none;
+      padding: 2rem 3rem;
+      font-weight: var(--text-weight-bold);
+      color: var(--color-neutral-grey-1);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background-color: var(--color-primary-2);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-neutral-grey-4);
+      }
+
+      @include sm {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__item-1 {
+    grid-area: item-1;
+  }
+
+  &__item-2 {
+    grid-area: item-2;
+  }
+
+  &__item-3 {
+    grid-area: item-3;
+  }
+}
+
+.item {
+  display: flex;
+  margin-top: 4rem;
+
+  @include sm {
+    margin-top: 0;
+  }
+
+  img {
+    object-fit: cover;
+    height: 15rem;
+  }
+
+  &__content {
+    margin-left: 2rem;
+  }
+
+  &__number {
+    font-size: var(--text-heading-size-2);
+    font-weight: var(--text-weight-bold);
+    color: var(--color-neutral-grey-2);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-weight: var(--text-weight-extrabold);
+    color: var(--color-neutral-grey-4);
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-primary-2);
+    }
+  }
+
+  &__description {
+    color: var(--color-neutral-grey-3);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
