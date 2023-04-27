@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Here](https://your-solution-url.com)
-- Live Site URL: [Here](https://your-live-site-url.com)
+- Solution URL: [Here](https://github.com/maiger/fem-news-homepage)
+- Live Site URL: [Here](https://maiger.github.io/fem-news-homepage/)
 
 ## My process
 
@@ -48,5 +48,4 @@ This one was fun. Nothing complicated but enjoyable to build.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@maiger](https://www.frontendmentor.io/profile/maiger)
